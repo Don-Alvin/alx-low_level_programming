@@ -1,7 +1,7 @@
-#include <studio.h>
+#include<studio.h>
 
 /**
- * main - Prints quote
+ * main - Entry point
  *
  * Return: zero on success
  *
