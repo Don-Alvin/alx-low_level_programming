@@ -1,28 +1,20 @@
 #include "main.h"
 /**
- * rot13 - encodes a string using rot13
- * @s: input string.
+ * _strncpy - copies a string
+ * @dest: destination.
+ * @src: source.
+ * @n: amount of bytes from src.
  * Return: the pointer to dest.
  */
 
-char *rot13(char *s)
+char *_strncpy(char *dest, char *src, int n)
 {
-        int count = 0, i;
-        char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i;
 
-        while (*(s + count) != '\0')
-        {
-            for (i = 0; i < 52; i++)
-            {
-                if (*(s + count) == alphabet[i])
-                {
-                    *(s + count) = rot13[i];
-                    break;
-                }
-            }
-            count++;
-        }
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	for ( ; i < n; i++)
+		dest[i] = '\0';
 
-        return (s);
+	return (dest);
 }
